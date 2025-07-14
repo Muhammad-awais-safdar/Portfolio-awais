@@ -5,7 +5,16 @@ export default function Navbar() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [activeSection, setActiveSection] = useState("home");
 
-  // Sticky header
+  // Map of section ids to custom titles
+  const sectionTitles = {
+    home: "Home - Muhammad Awais",
+    about: "About Me - Muhammad Awais",
+    work: "My Work - Muhammad Awais",
+    service: "Services - Muhammad Awais",
+    contact: "Contact - Muhammad Awais",
+  };
+
+  // Sticky header on scroll
   useEffect(() => {
     const handleScroll = () => {
       setIsSticky(window.scrollY > 2);
@@ -14,18 +23,23 @@ export default function Navbar() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  // Active nav on scroll
+  // Active section highlight + update document title
   useEffect(() => {
     const sections = document.querySelectorAll("section[id]");
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
-            setActiveSection(entry.target.id);
+            const currentId = entry.target.id;
+            setActiveSection(currentId);
+            // Update document title
+            if (sectionTitles[currentId]) {
+              document.title = sectionTitles[currentId];
+            }
           }
         });
       },
-      { threshold: 0.6 } // adjust as needed
+      { threshold: 0.6 }
     );
     sections.forEach((section) => observer.observe(section));
     return () => observer.disconnect();
@@ -38,9 +52,14 @@ export default function Navbar() {
     const target = document.getElementById(targetId);
     if (target) {
       target.scrollIntoView({ behavior: "smooth" });
-      setMobileMenuOpen(false); // close mobile menu on click
+      setMobileMenuOpen(false);
+      // Also update title on click immediately
+      if (sectionTitles[targetId]) {
+        document.title = sectionTitles[targetId];
+      }
     }
   };
+
 
   return (
     <>
@@ -55,23 +74,22 @@ export default function Navbar() {
             <div className="container">
               <div className="row align-items-center">
                 <div className="col-xl-2 col-lg-2 col-md-3 col-sm-4 col-5">
-                  <div className="logo mt-50 mb-50 transition5">
-                    <a className="header-logo" href="#">
+                  <div className="logo mt-50 mb-50">
+                    <a className="header-logo" href="/">
                       <img src="images/logo/logo.png" alt="Logo" />
                     </a>
                   </div>
                 </div>
-                <div className="col-xl-10 col-lg-10 col-md-9 col-sm-8 col-7 pl-0 d-flex justify-content-end align-items-center">
+                <div className="col-xl-10 col-lg-10 col-md-9 col-sm-8 col-7 d-flex justify-content-end align-items-center">
                   <div className="main-menu d-none d-xl-block">
                     <nav>
-                      <ul className="d-block">
+                      <ul>
                         {[
                           "home",
                           "about",
                           "work",
                           "service",
                           "contact",
-                          "blog",
                         ].map((id) => (
                           <li key={id}>
                             <a
@@ -88,7 +106,7 @@ export default function Navbar() {
                   </div>
                   <div className="header-btn pl-45">
                     <a href="#" className="text-uppercase d-inline-block">
-                      download cv
+                      Download CV
                     </a>
                   </div>
                   <div className="mobile-m-bar d-block d-xl-none ml-30">
@@ -106,20 +124,14 @@ export default function Navbar() {
         </div>
       </header>
 
-      {/* side-mobile-menu */}
-      <div
-        className={`side-mobile-menu pt-15 pb-30 pl-30 pr-20 pb-100 ${
-          mobileMenuOpen ? "open" : ""
-        }`}
-      >
-        <div className="d-flex justify-content-between w-100">
-          <div className="close-icon d-inline-block float-right clear-both mt-20 mb-15">
-            <button onClick={() => setMobileMenuOpen(false)}>
-              <span className="icon-clear theme-color">
-                <i className="fa fa-times"></i>
-              </span>
-            </button>
-          </div>
+      {/* Side mobile menu */}
+      <div className={`side-mobile-menu ${mobileMenuOpen ? "open" : ""}`}>
+        <div className="close-icon mt-20 mb-15 text-right">
+          <button onClick={() => setMobileMenuOpen(false)}>
+            <span className="icon-clear theme-color">
+              <i className="fa fa-times"></i>
+            </span>
+          </button>
         </div>
         <div className="mobile-menu mt-10">
           <ul>
@@ -138,51 +150,37 @@ export default function Navbar() {
             )}
           </ul>
         </div>
-        <h5 className="text-white text-center mt-35 pb-1 d-inline-block ml-3">
-          Follow me
-        </h5>
-        <ul className="social social-bg text-center d-flex mt-10 ml-3">
-          <li className="mr-2 rotate-hover">
-            <a
-              className="facebook-bg text-center pr-0 text-white d-block transition-3 rotate"
-              href="#"
-            >
+        <h5 className="text-center mt-35 pb-1">Follow me</h5>
+        <ul className="social text-center d-flex justify-content-center mt-10">
+          <li className="mr-2">
+            <a className="facebook-bg text-white d-block" href="#">
               <i className="fa-brands fa-facebook-f" />
             </a>
           </li>
-          <li className="mr-2 rotate-hover">
-            <a
-              className="twitter-bg text-center pr-0 text-white d-block rotate transition-3"
-              href="#"
-            >
+          <li className="mr-2">
+            <a className="twitter-bg text-white d-block" href="#">
               <i className="fa-brands fa-x-twitter" />
             </a>
           </li>
-          <li className="mr-2 rotate-hover">
-            <a
-              className="linkedin-bg text-center pr-0 text-white d-block rotate transition-3"
-              href="#"
-            >
+          <li className="mr-2">
+            <a className="linkedin-bg text-white d-block" href="#">
               <i className="fa-brands fa-linkedin-in" />
             </a>
           </li>
-          <li className="mr-2 rotate-hover">
-            <a
-              className="instagram-bg text-center pr-0 text-white d-block rotate transition-3"
-              href="#"
-            >
+          <li className="mr-2">
+            <a className="instagram-bg text-white d-block" href="#">
               <i className="fa-brands fa-instagram" />
             </a>
           </li>
         </ul>
       </div>
 
-      {/* overlay */}
+      {/* Overlay */}
       {mobileMenuOpen && (
         <div
-          onClick={() => setMobileMenuOpen(false)}
           className="body-overlay"
-        />
+          onClick={() => setMobileMenuOpen(false)}
+        ></div>
       )}
     </>
   );

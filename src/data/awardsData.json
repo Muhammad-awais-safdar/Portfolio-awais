@@ -1,0 +1,30 @@
+[
+    {
+      "id": "a1",
+      "logo": "images/award/award-logo1.png",
+      "title": "Top Rated Laravel Developer",
+      "year": "2023",
+      "organization": "Freelance Platform",
+      "location": "Remote",
+      "description": "Recognized for delivering high-quality, scalable Laravel solutions for global clients."
+    },
+    {
+      "id": "a2",
+      "logo": "images/award/award-logo2.png",
+      "title": "Outstanding Freelancer Award",
+      "year": "2022",
+      "organization": "Upwork Community",
+      "location": "Global",
+      "description": "Honored for exceptional project delivery, client satisfaction, and consistent 5-star reviews."
+    },
+    {
+      "id": "a3",
+      "logo": "images/award/award-logo3.png",
+      "title": "Fastest Delivery Award",
+      "year": "2021",
+      "organization": "Local Tech Community",
+      "location": "Pakistan",
+      "description": "Awarded for quickly turning complex requirements into fully functional applications."
+    }
+  ]
+  

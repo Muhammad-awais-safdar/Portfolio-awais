@@ -2,71 +2,71 @@
     {
         "id": "p1",
         "category": "Web Design",
-        "title": "Software Design for eThemeStudio",
+        "title": "Travel Booking UI for WanderGo",
         "image": "images/portfolio/port-img1.jpg",
         "largeImage": "images/portfolio/port-img1-large.jpg",
-        "description": "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
-        "client": "Juwel Khan",
-        "duration": "2 Weeks",
-        "task": "UI/UX, Frontend",
-        "budget": "$2000",
+        "description": "Designed a responsive travel website interface with custom booking flows and mobile-first layouts, crafted in Figma and implemented with React.",
+        "client": "WanderGo Ltd.",
+        "duration": "3 Weeks",
+        "task": "UI/UX Design, Frontend Development",
+        "budget": "$1800",
         "tags": [
-            "Web Design",
-            "Social Media",
-            "Product"
+            "UI/UX",
+            "Travel",
+            "React"
         ],
         "link": "#"
     },
     {
         "id": "p2",
         "category": "Development",
-        "title": "Website Development for ABC Corporation",
+        "title": "E-commerce Platform for NovaMart",
         "image": "images/portfolio/port-img2.jpg",
         "largeImage": "images/portfolio/port-img2-large.jpg",
-        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-        "client": "John Doe",
+        "description": "Built a scalable e-commerce platform using Laravel backend and React frontend, integrating secure payments and advanced product filters.",
+        "client": "NovaMart",
         "duration": "1 Month",
-        "task": "Fullstack Development",
-        "budget": "$5000",
+        "task": "Fullstack Development, API Integration",
+        "budget": "$4200",
         "tags": [
-            "Development",
-            "API",
-            "React"
+            "Laravel",
+            "React",
+            "E-commerce"
         ],
         "link": "#"
     },
     {
         "id": "p3",
         "category": "Branding",
-        "title": "Branding for Easy Computers",
+        "title": "Branding & Web for PixelDesk",
         "image": "images/portfolio/port-img3.jpg",
         "largeImage": "images/portfolio/port-img3-large.jpg",
-        "description": "Branding project for Easy Computers with full identity design.",
-        "client": "Easy Computers",
-        "duration": "3 Weeks",
-        "task": "Branding, Identity",
-        "budget": "$3000",
+        "description": "Developed a modern brand identity, including logo, typography, and a clean website layout to highlight PixelDesk's creative services.",
+        "client": "PixelDesk Creative",
+        "duration": "2 Weeks",
+        "task": "Logo Design, Brand Kit, Web Design",
+        "budget": "$2500",
         "tags": [
             "Branding",
             "Logo",
-            "Design"
+            "Web Design"
         ],
         "link": "#"
     },
     {
         "id": "p4",
-        "category": "Photography",
-        "title": "Security Analysis for eThemeStudio",
+        "category": "Security",
+        "title": "Security Review for DataPoint CRM",
         "image": "images/portfolio/port-img4.jpg",
         "largeImage": "images/portfolio/port-img4-large.jpg",
-        "description": "Security analysis and report for eThemeStudio systems.",
-        "client": "eThemeStudio",
+        "description": "Performed vulnerability assessment and code review on their Laravel-based CRM, improving overall data protection and compliance.",
+        "client": "DataPoint Solutions",
         "duration": "2 Weeks",
-        "task": "Security Audit",
-        "budget": "$2500",
+        "task": "Security Audit, Code Review",
+        "budget": "$2300",
         "tags": [
             "Security",
-            "Analysis",
+            "Laravel",
             "Audit"
         ],
         "link": "#"

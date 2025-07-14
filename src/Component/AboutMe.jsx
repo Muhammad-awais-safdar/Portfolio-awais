@@ -67,9 +67,9 @@ export default function AboutMe() {
                 {/* Info */}
                 <div className="about-info-wrapper pt-25 pb-20 mt-25">
                   <div className="row">
-                    <div className="col-xl-6 col-lg-12 col-md-6 col-sm-12 col-12">
+                    <div className="col-xl-5 col-lg-12 col-md-6 col-sm-12 col-12">
                       <ul className="about-info">
-                        <li className="d-inline-block pr-50">
+                        <li className="d-inline-block pr-45">
                           <p className="jostMedium-font-family mb-6">Name</p>
                           <p className="jostMedium-font-family mb-6">Age</p>
                           <p className="jostMedium-font-family mb-6">
@@ -83,7 +83,7 @@ export default function AboutMe() {
                         </li>
                       </ul>
                     </div>
-                    <div className="col-xl-6 col-lg-12 col-md-6 col-sm-12 col-12">
+                    <div className="col-xl-7 col-lg-12 col-md-6 col-sm-12 col-12">
                       <ul className="about-info">
                         <li className="d-inline-block pr-50">
                           <p className="jostMedium-font-family mb-6">Phone</p>

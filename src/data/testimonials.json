@@ -1,26 +1,82 @@
 [
     {
         "id": 1,
-        "text": "Excepteur sint occaecat cupidatat non proiden sunt in culpa qui officia deserunt mollit anim id est laebor um. Sed ut perspiciatis unde omnis iste natus error sit volup tatem gotiraz bole ami ke",
-        "authorName": "Paul Harrison",
-        "authorTitle": "eThemeStudio",
-        "authorImage": "images/testimonial/author-img.jpg",
+        "text": "Awais was fantastic to work with. He delivered our Laravel admin panel ahead of schedule and was very responsive to feedback.",
+        "authorName": "Emily Carter",
+        "authorTitle": "Project Manager, BrightTech",
+        "authorImage": "images/testimonial/author-img1.jpg",
         "alt": "author image 1"
     },
     {
         "id": 2,
-        "text": "Excepteur sint occaecat cupidatat non proiden sunt in culpa qui officia deserunt mollit anim id est laebor um. Sed ut perspiciatis unde omnis iste natus error sit volup tatem gotiraz bole ami ke",
-        "authorName": "Paul Harrison",
-        "authorTitle": "eThemeStudio",
-        "authorImage": "images/testimonial/author-img.jpg",
+        "text": "His attention to detail and commitment to quality really impressed us. Our website looks modern, clean, and works perfectly on all devices.",
+        "authorName": "David Lee",
+        "authorTitle": "CEO, Nova Design Studio",
+        "authorImage": "images/testimonial/author-img2.jpg",
         "alt": "author image 2"
     },
     {
         "id": 3,
-        "text": "Excepteur sint occaecat cupidatat non proiden sunt in culpa qui officia deserunt mollit anim id est laebor um. Sed ut perspiciatis unde omnis iste natus error sit volup tatem gotiraz bole ami ke",
-        "authorName": "Paul Harrison",
-        "authorTitle": "eThemeStudio",
-        "authorImage": "images/testimonial/author-img.jpg",
+        "text": "Delivered a custom React.js frontend exactly as requested. Communication was smooth and professional throughout the project.",
+        "authorName": "Sophia Martinez",
+        "authorTitle": "CTO, StartUp Hub",
+        "authorImage": "images/testimonial/author-img3.jpg",
         "alt": "author image 3"
+    },
+    {
+        "id": 4,
+        "text": "Awais helped us fix several bugs and optimize our website speed. Highly recommend for reliable and quick web development work.",
+        "authorName": "Michael Brown",
+        "authorTitle": "Founder, DigitalLaunch",
+        "authorImage": "images/testimonial/author-img4.jpg",
+        "alt": "author image 4"
+    },
+    {
+        "id": 5,
+        "text": "Great experience! He built a secure and user-friendly booking system for our business, exactly as we needed.",
+        "authorName": "Hannah Wilson",
+        "authorTitle": "Manager, TravelGo",
+        "authorImage": "images/testimonial/author-img5.jpg",
+        "alt": "author image 5"
+    },
+    {
+        "id": 6,
+        "text": "We asked for a modern blog CMS, and he delivered beyond expectations. Clean code, responsive design, and smooth admin interface.",
+        "authorName": "Oliver Scott",
+        "authorTitle": "Content Lead, Insight Media",
+        "authorImage": "images/testimonial/author-img6.jpg",
+        "alt": "author image 6"
+    },
+    {
+        "id": 7,
+        "text": "Very professional and easy to work with. Always willing to answer questions and explain the technical details clearly.",
+        "authorName": "Lily Evans",
+        "authorTitle": "Marketing Director, Creatix",
+        "authorImage": "images/testimonial/author-img7.jpg",
+        "alt": "author image 7"
+    },
+    {
+        "id": 8,
+        "text": "Awais built our e-commerce store in Laravel, complete with payment integration and admin dashboard. Smooth process from start to finish.",
+        "authorName": "Jacob Turner",
+        "authorTitle": "Owner, StyleCart",
+        "authorImage": "images/testimonial/author-img8.jpg",
+        "alt": "author image 8"
+    },
+    {
+        "id": 9,
+        "text": "The custom features we needed were complex, but Awais handled them confidently and kept us updated along the way.",
+        "authorName": "Grace Patel",
+        "authorTitle": "COO, Eventia",
+        "authorImage": "images/testimonial/author-img9.jpg",
+        "alt": "author image 9"
+    },
+    {
+        "id": 10,
+        "text": "From API integration to frontend polish, he did it all seamlessly. Would definitely work with him again on future projects.",
+        "authorName": "Daniel Adams",
+        "authorTitle": "Tech Lead, AppForge",
+        "authorImage": "images/testimonial/author-img10.jpg",
+        "alt": "author image 10"
     }
 ]

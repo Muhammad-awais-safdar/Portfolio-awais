@@ -1,20 +1,20 @@
 [
     {
-        "title": "Senior System Engineer",
-        "company": "eThemeStudio",
-        "years": "2018 - Running",
-        "description": "Ludantium totam rem aperia meaque ipsa quae ab illo inven tore veritatis et quasi architecto beatae et vitae ullam molesti quae quasi."
+        "title": "Junior Laravel Developer",
+        "company": "Freelance / Remote",
+        "years": "2022 - Present",
+        "description": "Developing custom web applications, admin panels, and dynamic websites using Laravel and Filament. Focused on clean architecture, scalability, and user-friendly design."
     },
     {
-        "title": "Data Architect",
-        "company": "Easy Computers",
-        "years": "2015 - 2018",
-        "description": "Ludantium totam rem aperia meaque ipsa quae ab illo inven tore veritatis et quasi architecto beatae et vitae ullam molesti quae quasi."
+        "title": "Frontend Developer",
+        "company": "Freelance / Remote",
+        "years": "2021 - 2022",
+        "description": "Built responsive UIs using React.js, HTML, CSS, and JavaScript. Implemented interactive features and ensured seamless user experience across devices."
     },
     {
-        "title": "Web Developer",
-        "company": "Bangla College",
-        "years": "2012 - 2015",
-        "description": "Ludantium totam rem aperia meaque ipsa quae ab illo inven tore veritatis et quasi architecto beatae et vitae ullam molesti quae quasi."
+        "title": "Web Development Intern",
+        "company": "MA Tech Solutions",
+        "years": "2020 - 2021",
+        "description": "Worked on academic projects including a Car Rental Management System and travel websites, gaining practical experience in PHP, Laravel, and database management."
     }
 ]

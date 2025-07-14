@@ -560,7 +560,7 @@ a:hover,
   font-weight: 400;
 }
 .slider-content h1 {
-  font-size: 144px;
+  font-size: 130px;
   line-height: 1.07;
 }
 .slider-content h2 {
@@ -1314,3 +1314,75 @@ span#main {
 	background: var(--primary-color);
 }
 /* .side-mobile-menu end*/
+/* side-mobile-menu hidden by default */
+.side-mobile-menu {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 280px;
+  height: 100%;
+  background: #111;
+  /* your theme color */
+  transform: translateX(100%);
+  transition: transform 0.3s ease;
+  z-index: 9999;
+  padding: 20px;
+  overflow-y: auto;
+}
+
+/* when open */
+.side-mobile-menu.open {
+  transform: translateX(0);
+}
+
+/* overlay behind mobile menu */
+.body-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 9998;
+}
+
+/* optional: style active link */
+.mobile-menu a.active,
+.main-menu a.active {
+  color: #00aced;
+  /* or your theme color */
+}
+
+/* mobile-menu list */
+.mobile-menu ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.mobile-menu li {
+  margin-bottom: 10px;
+}
+
+.mobile-menu a {
+  text-decoration: none;
+  color: #fff;
+}
+
+/* social icons */
+.social a {
+  display: inline-block;
+  width: 35px;
+  height: 35px;
+  line-height: 35px;
+  text-align: center;
+  border-radius: 50%;
+  background: #333;
+  transition: all 0.3s ease;
+}
+
+.social a:hover {
+  background: #00aced;
+  /* your theme hover color */
+  color: #fff;
+}

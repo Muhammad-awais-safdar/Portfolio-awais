@@ -1,27 +1,28 @@
 [
     {
-        "title": "Hourly",
+        "title": "Hourly Plan",
         "price": "$99",
         "per": "Per Hour",
+        "description": "Ideal for quick tasks, fixes, or small updates.",
         "features": [
             {
-                "label": "One time contract",
+                "label": "One-time contract",
                 "included": true
             },
             {
-                "label": "Flexible Contract",
+                "label": "Flexible scheduling",
                 "included": true
             },
             {
-                "label": "Source Files",
+                "label": "Delivery of source files",
                 "included": true
             },
             {
-                "label": "Support",
+                "label": "Ongoing support",
                 "included": false
             },
             {
-                "label": "Updates",
+                "label": "Future updates & revisions",
                 "included": false
             }
         ],
@@ -30,54 +31,56 @@
     {
         "title": "Project Basis",
         "price": "$69",
-        "per": "Per Hour",
+        "per": "Per Hour (Estimated)",
+        "description": "Best for full website builds, redesigns, or larger modules.",
         "features": [
             {
-                "label": "One time contract",
+                "label": "One-time contract",
                 "included": true
             },
             {
-                "label": "Flexible Contract",
+                "label": "Flexible milestones & deadlines",
                 "included": true
             },
             {
-                "label": "Source Files",
+                "label": "Delivery of complete source files",
                 "included": true
             },
             {
-                "label": "Support",
+                "label": "30 days post-launch support",
                 "included": true
             },
             {
-                "label": "Updates",
+                "label": "Minor updates after launch",
                 "included": false
             }
         ],
         "aosDuration": 1400
     },
     {
-        "title": "Monthly",
+        "title": "Monthly Retainer",
         "price": "$39",
-        "per": "Per Hour",
+        "per": "Per Hour (Fixed Monthly Commitment)",
+        "description": "Perfect for ongoing maintenance, SEO, or continuous improvements.",
         "features": [
             {
-                "label": "One time contract",
+                "label": "Recurring monthly contract",
                 "included": true
             },
             {
-                "label": "Flexible Contract",
+                "label": "Priority scheduling",
                 "included": true
             },
             {
-                "label": "Source Files",
+                "label": "Delivery of updated source files",
                 "included": true
             },
             {
-                "label": "Support",
+                "label": "Ongoing support & consultation",
                 "included": true
             },
             {
-                "label": "Updates",
+                "label": "Regular updates & enhancements",
                 "included": true
             }
         ],

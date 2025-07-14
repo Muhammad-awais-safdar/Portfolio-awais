@@ -55,7 +55,7 @@ export default function HeroSection() {
                     <span className="sub-heading d-block text-uppercase theme-color mb-0">
                       Hello I’m
                     </span>
-                    James Smith
+                    Muhammad Awais
                   </h1>
                   <h2 className="text-capitalize white-text mb-40">
                     A Passionate{" "}

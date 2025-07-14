@@ -28,13 +28,15 @@ export default function FunFacts() {
                   Fun Facts
                 </span>
                 <h2 className="mb-30 text-white">
-                  I Develop System that Works
+                  I Build Digital Solutions that Make a Difference
                 </h2>
               </div>
               <p>
-                Sed ut perspiciatis unde omnis iste natus kobita tumi sopno
-                charini hoye khbor nio na sit volup sundori toma amar tumi nili
-                mar tatem accusantium dolore.
+                As a passionate Laravel and web developer, I love turning ideas
+                into fully functional, responsive websites and systems. Whether
+                it’s crafting clean UI, developing custom dashboards, or
+                building apps that solve real problems — I focus on delivering
+                work that’s practical, user-friendly, and built to last.
               </p>
             </div>
           </motion.div>

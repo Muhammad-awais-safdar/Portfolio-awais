@@ -2,23 +2,23 @@
     {
         "icon": "images/icon/intro-ft-icon1.png",
         "title": "Dedication",
-        "text": "Seaque ipsa quae ab illo inven tore veritatis et quasi architecto beatae vitae."
+        "text": "Committed to crafting clean, scalable code and elegant design that brings ideas to life."
     },
     {
         "icon": "images/icon/intro-ft-icon2.png",
         "title": "Smart Work",
-        "text": "Seaque ipsa quae ab illo inven tore veritatis et quasi architecto beatae vitae.",
+        "text": "Delivering optimized solutions with modern frameworks like Laravel & React — efficiently and creatively.",
         "extraClass": "intro-feature-margin mt-60"
     },
     {
         "icon": "images/icon/intro-ft-icon3.png",
         "title": "Collaboration",
-        "text": "Seaque ipsa quae ab illo inven tore veritatis et quasi architecto beatae vitae."
+        "text": "Partnering closely with startups & agencies to build tailored, user-centric digital experiences."
     },
     {
         "icon": "images/icon/intro-ft-icon4.png",
-        "title": "Technology",
-        "text": "Seaque ipsa quae ab illo inven tore veritatis et quasi architecto beatae vitae.",
+        "title": "Latest Technology",
+        "text": "Harnessing the power of cutting-edge tools & best practices for reliable, future-ready web solutions.",
         "extraClass": "intro-feature-margin mt-60"
     }
 ]

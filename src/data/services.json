@@ -1,28 +1,28 @@
 [
     {
         "title": "Web Development",
-        "description": "Ludantium totam rem aperia meaququae ab tatis et quasi architecto beatae vit dunt ut labore et dolore magna aliqua.",
+        "description": "Building responsive and user-friendly websites using Laravel, React.js, and modern web technologies tailored to client needs.",
         "icon": "images/icon/ser-icon1.png",
         "aosDuration": 1000,
         "aosDelay": 500
     },
     {
-        "title": "Software Development",
-        "description": "Ludantium totam rem aperia meaququae ab tatis et quasi architecto beatae vit dunt ut labore et dolore magna aliqua.",
+        "title": "Custom Admin Panels",
+        "description": "Developing secure, feature-rich admin dashboards with Laravel Filament to simplify content and user management.",
         "icon": "images/icon/ser-icon2.png",
         "aosDuration": 1200,
         "aosDelay": 500
     },
     {
-        "title": "System Development",
-        "description": "Ludantium totam rem aperia meaququae ab tatis et quasi architecto beatae vit dunt ut labore et dolore magna aliqua.",
+        "title": "API Integration",
+        "description": "Integrating RESTful APIs for dynamic data exchange, payment gateways, and external services to enhance web applications.",
         "icon": "images/icon/ser-icon3.png",
         "aosDuration": 1000,
         "aosDelay": 0
     },
     {
-        "title": "Security Analysis",
-        "description": "Ludantium totam rem aperia meaququae ab tatis et quasi architecto beatae vit dunt ut labore et dolore magna aliqua.",
+        "title": "Performance & SEO Optimization",
+        "description": "Improving website speed, structure, and content to boost user experience and search engine visibility.",
         "icon": "images/icon/ser-icon4.png",
         "aosDuration": 1200,
         "aosDelay": 0

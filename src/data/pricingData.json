@@ -1,0 +1,86 @@
+[
+    {
+        "title": "Hourly",
+        "price": "$99",
+        "per": "Per Hour",
+        "features": [
+            {
+                "label": "One time contract",
+                "included": true
+            },
+            {
+                "label": "Flexible Contract",
+                "included": true
+            },
+            {
+                "label": "Source Files",
+                "included": true
+            },
+            {
+                "label": "Support",
+                "included": false
+            },
+            {
+                "label": "Updates",
+                "included": false
+            }
+        ],
+        "aosDuration": 1200
+    },
+    {
+        "title": "Project Basis",
+        "price": "$69",
+        "per": "Per Hour",
+        "features": [
+            {
+                "label": "One time contract",
+                "included": true
+            },
+            {
+                "label": "Flexible Contract",
+                "included": true
+            },
+            {
+                "label": "Source Files",
+                "included": true
+            },
+            {
+                "label": "Support",
+                "included": true
+            },
+            {
+                "label": "Updates",
+                "included": false
+            }
+        ],
+        "aosDuration": 1400
+    },
+    {
+        "title": "Monthly",
+        "price": "$39",
+        "per": "Per Hour",
+        "features": [
+            {
+                "label": "One time contract",
+                "included": true
+            },
+            {
+                "label": "Flexible Contract",
+                "included": true
+            },
+            {
+                "label": "Source Files",
+                "included": true
+            },
+            {
+                "label": "Support",
+                "included": true
+            },
+            {
+                "label": "Updates",
+                "included": true
+            }
+        ],
+        "aosDuration": 1600
+    }
+]

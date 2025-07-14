@@ -1,0 +1,26 @@
+[
+    {
+        "name": "Web Development",
+        "percentage": 80
+    },
+    {
+        "name": "Hardware Development",
+        "percentage": 95
+    },
+    {
+        "name": "Software Development",
+        "percentage": 90
+    },
+    {
+        "name": "System Application",
+        "percentage": 75
+    },
+    {
+        "name": "Project management",
+        "percentage": 60
+    },
+    {
+        "name": "Data Administration",
+        "percentage": 85
+    }
+]

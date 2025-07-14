@@ -1,0 +1,74 @@
+[
+    {
+        "id": "p1",
+        "category": "Web Design",
+        "title": "Software Design for eThemeStudio",
+        "image": "images/portfolio/port-img1.jpg",
+        "largeImage": "images/portfolio/port-img1-large.jpg",
+        "description": "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
+        "client": "Juwel Khan",
+        "duration": "2 Weeks",
+        "task": "UI/UX, Frontend",
+        "budget": "$2000",
+        "tags": [
+            "Web Design",
+            "Social Media",
+            "Product"
+        ],
+        "link": "#"
+    },
+    {
+        "id": "p2",
+        "category": "Development",
+        "title": "Website Development for ABC Corporation",
+        "image": "images/portfolio/port-img2.jpg",
+        "largeImage": "images/portfolio/port-img2-large.jpg",
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+        "client": "John Doe",
+        "duration": "1 Month",
+        "task": "Fullstack Development",
+        "budget": "$5000",
+        "tags": [
+            "Development",
+            "API",
+            "React"
+        ],
+        "link": "#"
+    },
+    {
+        "id": "p3",
+        "category": "Branding",
+        "title": "Branding for Easy Computers",
+        "image": "images/portfolio/port-img3.jpg",
+        "largeImage": "images/portfolio/port-img3-large.jpg",
+        "description": "Branding project for Easy Computers with full identity design.",
+        "client": "Easy Computers",
+        "duration": "3 Weeks",
+        "task": "Branding, Identity",
+        "budget": "$3000",
+        "tags": [
+            "Branding",
+            "Logo",
+            "Design"
+        ],
+        "link": "#"
+    },
+    {
+        "id": "p4",
+        "category": "Photography",
+        "title": "Security Analysis for eThemeStudio",
+        "image": "images/portfolio/port-img4.jpg",
+        "largeImage": "images/portfolio/port-img4-large.jpg",
+        "description": "Security analysis and report for eThemeStudio systems.",
+        "client": "eThemeStudio",
+        "duration": "2 Weeks",
+        "task": "Security Audit",
+        "budget": "$2500",
+        "tags": [
+            "Security",
+            "Analysis",
+            "Audit"
+        ],
+        "link": "#"
+    }
+]

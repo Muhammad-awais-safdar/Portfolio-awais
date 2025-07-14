@@ -1,0 +1,24 @@
+[
+    {
+        "icon": "images/icon/intro-ft-icon1.png",
+        "title": "Dedication",
+        "text": "Seaque ipsa quae ab illo inven tore veritatis et quasi architecto beatae vitae."
+    },
+    {
+        "icon": "images/icon/intro-ft-icon2.png",
+        "title": "Smart Work",
+        "text": "Seaque ipsa quae ab illo inven tore veritatis et quasi architecto beatae vitae.",
+        "extraClass": "intro-feature-margin mt-60"
+    },
+    {
+        "icon": "images/icon/intro-ft-icon3.png",
+        "title": "Collaboration",
+        "text": "Seaque ipsa quae ab illo inven tore veritatis et quasi architecto beatae vitae."
+    },
+    {
+        "icon": "images/icon/intro-ft-icon4.png",
+        "title": "Technology",
+        "text": "Seaque ipsa quae ab illo inven tore veritatis et quasi architecto beatae vitae.",
+        "extraClass": "intro-feature-margin mt-60"
+    }
+]

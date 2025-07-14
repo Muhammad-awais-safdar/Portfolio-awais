@@ -1,0 +1,26 @@
+[
+    {
+        "id": 1,
+        "text": "Excepteur sint occaecat cupidatat non proiden sunt in culpa qui officia deserunt mollit anim id est laebor um. Sed ut perspiciatis unde omnis iste natus error sit volup tatem gotiraz bole ami ke",
+        "authorName": "Paul Harrison",
+        "authorTitle": "eThemeStudio",
+        "authorImage": "images/testimonial/author-img.jpg",
+        "alt": "author image 1"
+    },
+    {
+        "id": 2,
+        "text": "Excepteur sint occaecat cupidatat non proiden sunt in culpa qui officia deserunt mollit anim id est laebor um. Sed ut perspiciatis unde omnis iste natus error sit volup tatem gotiraz bole ami ke",
+        "authorName": "Paul Harrison",
+        "authorTitle": "eThemeStudio",
+        "authorImage": "images/testimonial/author-img.jpg",
+        "alt": "author image 2"
+    },
+    {
+        "id": 3,
+        "text": "Excepteur sint occaecat cupidatat non proiden sunt in culpa qui officia deserunt mollit anim id est laebor um. Sed ut perspiciatis unde omnis iste natus error sit volup tatem gotiraz bole ami ke",
+        "authorName": "Paul Harrison",
+        "authorTitle": "eThemeStudio",
+        "authorImage": "images/testimonial/author-img.jpg",
+        "alt": "author image 3"
+    }
+]

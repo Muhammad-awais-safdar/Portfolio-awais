@@ -1,0 +1,30 @@
+[
+    {
+        "title": "Web Development",
+        "description": "Ludantium totam rem aperia meaququae ab tatis et quasi architecto beatae vit dunt ut labore et dolore magna aliqua.",
+        "icon": "images/icon/ser-icon1.png",
+        "aosDuration": 1000,
+        "aosDelay": 500
+    },
+    {
+        "title": "Software Development",
+        "description": "Ludantium totam rem aperia meaququae ab tatis et quasi architecto beatae vit dunt ut labore et dolore magna aliqua.",
+        "icon": "images/icon/ser-icon2.png",
+        "aosDuration": 1200,
+        "aosDelay": 500
+    },
+    {
+        "title": "System Development",
+        "description": "Ludantium totam rem aperia meaququae ab tatis et quasi architecto beatae vit dunt ut labore et dolore magna aliqua.",
+        "icon": "images/icon/ser-icon3.png",
+        "aosDuration": 1000,
+        "aosDelay": 0
+    },
+    {
+        "title": "Security Analysis",
+        "description": "Ludantium totam rem aperia meaququae ab tatis et quasi architecto beatae vit dunt ut labore et dolore magna aliqua.",
+        "icon": "images/icon/ser-icon4.png",
+        "aosDuration": 1200,
+        "aosDelay": 0
+    }
+]

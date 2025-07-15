@@ -1,26 +1,26 @@
 [
     {
-        "name": "Web Development (Laravel & React.js)",
+        "name": "Laravel & React",
         "percentage": 90
     },
     {
-        "name": "Frontend Development & UI/UX Design",
+        "name": "Frontend & UI/UX",
         "percentage": 85
     },
     {
-        "name": "Backend Development & API Integration",
+        "name": "Backend & API",
         "percentage": 88
     },
     {
-        "name": "SEO Optimization",
+        "name": "SEO",
         "percentage": 80
     },
     {
-        "name": "Project Management",
+        "name": "PM",
         "percentage": 70
     },
     {
-        "name": "Database Management & Security",
+        "name": "DB & Security",
         "percentage": 82
     }
 ]

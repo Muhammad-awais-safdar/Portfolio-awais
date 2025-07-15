@@ -1,0 +1,15 @@
+{
+    "name": "Awais Safdar",
+    "age": "25 Years",
+    "occupation": "Web Developer",
+    "phone": "+92 306 7968983",
+    "email": "awaissafdar143@gmail.com",
+    "nationality": "Pakistani",
+    "title": "I Build Modern Web Solutions",
+    "description1": "I am a passionate Laravel and React.js developer specializing in building custom, responsive, and user-friendly web applications. From e-commerce websites to custom admin panels, I bring ideas to life with clean code and modern design.",
+    "description2": "Focused on performance, scalability, and great user experience.",
+    "signature": "images/about/signature.png",
+    "signatureName": "Awais Safdar",
+    "signatureTitle": "Junior Laravel Developer",
+    "image": "images/about/about-img.jpg"
+}

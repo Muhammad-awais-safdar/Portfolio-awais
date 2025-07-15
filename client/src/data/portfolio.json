@@ -1,0 +1,74 @@
+[
+    {
+        "id": "p1",
+        "category": "Web Design",
+        "title": "Travel Booking UI for WanderGo",
+        "image": "images/portfolio/port-img1.jpg",
+        "largeImage": "images/portfolio/port-img1-large.jpg",
+        "description": "Designed a responsive travel website interface with custom booking flows and mobile-first layouts, crafted in Figma and implemented with React.",
+        "client": "WanderGo Ltd.",
+        "duration": "3 Weeks",
+        "task": "UI/UX Design, Frontend Development",
+        "budget": "$1800",
+        "tags": [
+            "UI/UX",
+            "Travel",
+            "React"
+        ],
+        "link": "#"
+    },
+    {
+        "id": "p2",
+        "category": "Development",
+        "title": "E-commerce Platform for NovaMart",
+        "image": "images/portfolio/port-img2.jpg",
+        "largeImage": "images/portfolio/port-img2-large.jpg",
+        "description": "Built a scalable e-commerce platform using Laravel backend and React frontend, integrating secure payments and advanced product filters.",
+        "client": "NovaMart",
+        "duration": "1 Month",
+        "task": "Fullstack Development, API Integration",
+        "budget": "$4200",
+        "tags": [
+            "Laravel",
+            "React",
+            "E-commerce"
+        ],
+        "link": "#"
+    },
+    {
+        "id": "p3",
+        "category": "Branding",
+        "title": "Branding & Web for PixelDesk",
+        "image": "images/portfolio/port-img3.jpg",
+        "largeImage": "images/portfolio/port-img3-large.jpg",
+        "description": "Developed a modern brand identity, including logo, typography, and a clean website layout to highlight PixelDesk's creative services.",
+        "client": "PixelDesk Creative",
+        "duration": "2 Weeks",
+        "task": "Logo Design, Brand Kit, Web Design",
+        "budget": "$2500",
+        "tags": [
+            "Branding",
+            "Logo",
+            "Web Design"
+        ],
+        "link": "#"
+    },
+    {
+        "id": "p4",
+        "category": "Security",
+        "title": "Security Review for DataPoint CRM",
+        "image": "images/portfolio/port-img4.jpg",
+        "largeImage": "images/portfolio/port-img4-large.jpg",
+        "description": "Performed vulnerability assessment and code review on their Laravel-based CRM, improving overall data protection and compliance.",
+        "client": "DataPoint Solutions",
+        "duration": "2 Weeks",
+        "task": "Security Audit, Code Review",
+        "budget": "$2300",
+        "tags": [
+            "Security",
+            "Laravel",
+            "Audit"
+        ],
+        "link": "#"
+    }
+]

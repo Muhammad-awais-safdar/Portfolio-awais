@@ -1,11 +1,35 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import Marquee from "./Marquee";
 import PortfolioModal from "./PortfolioModal";
-import portfolioData from "../data/portfolio.json";
+import api from "../services/api";
 
 export default function Portfolio() {
   const [selectedItem, setSelectedItem] = useState(null);
+  const [portfolioData, setPortfolioData] = useState([]);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    const fetchPortfolioData = async () => {
+      try {
+        const data = await api.getPortfolio();
+        setPortfolioData(data);
+      } catch (error) {
+        console.error('Error fetching portfolio data:', error);
+        // Fallback to local JSON if API fails
+        const fallbackData = await import('../data/portfolio.json');
+        setPortfolioData(fallbackData.default);
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    fetchPortfolioData();
+  }, []);
+
+  if (loading) {
+    return <div className="loading">Loading...</div>;
+  }
 
   return (
     <section id="work" className="portfolio-area over-hidden pb-165">

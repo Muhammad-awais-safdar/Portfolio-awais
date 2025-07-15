@@ -1,9 +1,34 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import Tilt from "react-parallax-tilt";
 import { motion } from "framer-motion";
-import aboutData from "../data/about.json";
+import api from "../services/api";
 
 export default function AboutMe() {
+  const [aboutData, setAboutData] = useState({});
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    const fetchAboutData = async () => {
+      try {
+        const data = await api.getAbout();
+        setAboutData(data);
+      } catch (error) {
+        console.error('Error fetching about data:', error);
+        // Fallback to local JSON if API fails
+        const fallbackData = await import('../data/about.json');
+        setAboutData(fallbackData.default);
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    fetchAboutData();
+  }, []);
+
+  if (loading) {
+    return <div className="loading">Loading...</div>;
+  }
+
   return (
     <section id="about" className="about-area over-hidden">
       <div className="about-content-wrapper about-margin mt-170 mb-110 position-relative">

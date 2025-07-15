@@ -1,7 +1,7 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import CountUp from "react-countup";
 import { motion } from "framer-motion";
-import skillsData from "../data/skills.json";
+import api from "../services/api";
 
 
 const SkillCircle = ({ percentage, name }) => {
@@ -72,6 +72,31 @@ const SkillCircle = ({ percentage, name }) => {
 
 
 export default function Skills() {
+  const [skillsData, setSkillsData] = useState([]);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    const fetchSkillsData = async () => {
+      try {
+        const data = await api.getSkills();
+        setSkillsData(data);
+      } catch (error) {
+        console.error('Error fetching skills data:', error);
+        // Fallback to local JSON if API fails
+        const fallbackData = await import('../data/skills.json');
+        setSkillsData(fallbackData.default);
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    fetchSkillsData();
+  }, []);
+
+  if (loading) {
+    return <div className="loading">Loading...</div>;
+  }
+
   return (
     <div
       id="skills"

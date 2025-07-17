@@ -1,4 +1,4 @@
-const API_BASE_URL = 'https://portfolio-backend-es4q.onrender.com';
+const API_BASE_URL = 'https://portfolio-backend-es4q.onrender.com/api';
 
 const handleApiCall = async (url) => {
   try {

@@ -1,11 +1,43 @@
-import React, { useRef } from "react";
+import React, { useRef, useState, useEffect } from "react";
 import { motion, useInView } from "framer-motion";
 import CountUp from "react-countup";
-import factsData from "./../data/FunFacts.json";
+import api from "../services/api";
 
 export default function FunFacts() {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, amount: 0.3 });
+  const [facts, setFacts] = useState([]);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    fetchFacts();
+  }, []);
+
+  const fetchFacts = async () => {
+    try {
+      const data = await api.getFunFacts();
+      setFacts(data || []);
+    } catch (error) {
+      console.error('Error fetching fun facts:', error);
+      setFacts([]);
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  if (loading) {
+    return (
+      <section className="fun-fact-area section-bg position-relative over-hidden pt-150 pb-120">
+        <div className="container">
+          <div className="text-center">
+            <div className="spinner-border text-primary" role="status">
+              <span className="sr-only">Loading...</span>
+            </div>
+          </div>
+        </div>
+      </section>
+    );
+  }
 
   return (
     <section
@@ -50,7 +82,7 @@ export default function FunFacts() {
             transition={{ duration: 0.8, delay: 0.2 }}
           >
             <div className="row justify-content-center align-items-center">
-              {factsData.map((fact, idx) => (
+              {facts.map((fact, idx) => (
                 <motion.div
                   key={idx}
                   className="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-10 mb-30"

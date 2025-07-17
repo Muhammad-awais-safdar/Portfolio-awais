@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
 import api from "../services/api";
-import servicesData from "../data/services.json";
 
 export default function Services() {
   const [services, setServices] = useState([]);
@@ -13,16 +12,10 @@ export default function Services() {
   const fetchServices = async () => {
     try {
       const data = await api.getServices();
-      if (data && data.length > 0) {
-        setServices(data);
-      } else {
-        // Fallback to static data if no API data
-        setServices(servicesData);
-      }
+      setServices(data || []);
     } catch (error) {
       console.error('Error fetching services:', error);
-      // Fallback to static data on error
-      setServices(servicesData);
+      setServices([]);
     } finally {
       setLoading(false);
     }

@@ -1,81 +1,82 @@
 const API_BASE_URL = 'http://localhost:5000/api';
 
+const handleApiCall = async (url) => {
+  try {
+    const response = await fetch(url);
+    if (!response.ok) {
+      throw new Error(`HTTP error! status: ${response.status}`);
+    }
+    const data = await response.json();
+    return data;
+  } catch (error) {
+    console.error(`API call failed for ${url}:`, error);
+    throw error;
+  }
+};
+
 const api = {
   // About
   getAbout: async () => {
-    const response = await fetch(`${API_BASE_URL}/about`);
-    return response.json();
+    return await handleApiCall(`${API_BASE_URL}/about`);
   },
 
   // Skills
   getSkills: async () => {
-    const response = await fetch(`${API_BASE_URL}/skills`);
-    return response.json();
+    return await handleApiCall(`${API_BASE_URL}/skills`);
   },
 
   // Experience
   getExperience: async () => {
-    const response = await fetch(`${API_BASE_URL}/experience`);
-    return response.json();
+    return await handleApiCall(`${API_BASE_URL}/experience`);
   },
 
   // Education
   getEducation: async () => {
-    const response = await fetch(`${API_BASE_URL}/education`);
-    return response.json();
+    return await handleApiCall(`${API_BASE_URL}/education`);
   },
 
   // Portfolio
   getPortfolio: async () => {
-    const response = await fetch(`${API_BASE_URL}/portfolio`);
-    return response.json();
+    return await handleApiCall(`${API_BASE_URL}/portfolio`);
   },
 
   getPortfolioById: async (id) => {
-    const response = await fetch(`${API_BASE_URL}/portfolio/${id}`);
-    return response.json();
+    return await handleApiCall(`${API_BASE_URL}/portfolio/${id}`);
   },
 
   // Testimonials
   getTestimonials: async () => {
-    const response = await fetch(`${API_BASE_URL}/testimonials`);
-    return response.json();
+    return await handleApiCall(`${API_BASE_URL}/testimonials`);
   },
 
   // Services
   getServices: async () => {
-    const response = await fetch(`${API_BASE_URL}/services`);
-    return response.json();
+    return await handleApiCall(`${API_BASE_URL}/services`);
   },
 
   // Fun Facts
   getFunFacts: async () => {
-    const response = await fetch(`${API_BASE_URL}/funfacts`);
-    return response.json();
+    return await handleApiCall(`${API_BASE_URL}/funfacts`);
   },
 
   // Brands
   getBrands: async () => {
-    const response = await fetch(`${API_BASE_URL}/brands`);
-    return response.json();
+    return await handleApiCall(`${API_BASE_URL}/brands`);
   },
 
   // Pricing
   getPricing: async () => {
-    const response = await fetch(`${API_BASE_URL}/pricing`);
-    return response.json();
+    return await handleApiCall(`${API_BASE_URL}/pricing`);
   },
 
   // Awards
   getAwards: async () => {
-    const response = await fetch(`${API_BASE_URL}/awards`);
-    return response.json();
+    return await handleApiCall(`${API_BASE_URL}/awards`);
   },
 
   // Intro Features
   getIntroFeatures: async () => {
-    const response = await fetch(`${API_BASE_URL}/intro-features`);
-    return response.json();
+    return await handleApiCall(`${API_BASE_URL}/intro-features`);
   }
 };
 

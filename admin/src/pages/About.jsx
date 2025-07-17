@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react'
 import { aboutAPI } from '../services/api'
 import toast from 'react-hot-toast'
+import FileUpload from '../components/FileUpload'
 
 const About = () => {
   const [aboutData, setAboutData] = useState({
@@ -62,6 +63,20 @@ const About = () => {
     }))
   }
 
+  const handleFileUpload = (fieldName) => (fileData) => {
+    if (fileData) {
+      setAboutData(prev => ({
+        ...prev,
+        [fieldName]: fileData.url
+      }))
+    } else {
+      setAboutData(prev => ({
+        ...prev,
+        [fieldName]: ''
+      }))
+    }
+  }
+
   if (loading) {
     return (
       <div className="flex justify-center items-center h-64">
@@ -87,7 +102,10 @@ const About = () => {
         <form onSubmit={handleSubmit} className="space-y-6 p-6">
           <div className="grid grid-cols-1 gap-6 sm:grid-cols-2">
             <div>
-              <label htmlFor="name" className="block text-sm font-medium text-gray-700">
+              <label
+                htmlFor="name"
+                className="block text-sm font-medium text-gray-700"
+              >
                 Full Name
               </label>
               <input
@@ -102,7 +120,10 @@ const About = () => {
             </div>
 
             <div>
-              <label htmlFor="age" className="block text-sm font-medium text-gray-700">
+              <label
+                htmlFor="age"
+                className="block text-sm font-medium text-gray-700"
+              >
                 Age
               </label>
               <input
@@ -116,7 +137,10 @@ const About = () => {
             </div>
 
             <div>
-              <label htmlFor="occupation" className="block text-sm font-medium text-gray-700">
+              <label
+                htmlFor="occupation"
+                className="block text-sm font-medium text-gray-700"
+              >
                 Occupation
               </label>
               <input
@@ -130,7 +154,10 @@ const About = () => {
             </div>
 
             <div>
-              <label htmlFor="phone" className="block text-sm font-medium text-gray-700">
+              <label
+                htmlFor="phone"
+                className="block text-sm font-medium text-gray-700"
+              >
                 Phone
               </label>
               <input
@@ -144,7 +171,10 @@ const About = () => {
             </div>
 
             <div>
-              <label htmlFor="email" className="block text-sm font-medium text-gray-700">
+              <label
+                htmlFor="email"
+                className="block text-sm font-medium text-gray-700"
+              >
                 Email
               </label>
               <input
@@ -158,7 +188,10 @@ const About = () => {
             </div>
 
             <div>
-              <label htmlFor="nationality" className="block text-sm font-medium text-gray-700">
+              <label
+                htmlFor="nationality"
+                className="block text-sm font-medium text-gray-700"
+              >
                 Nationality
               </label>
               <input
@@ -173,7 +206,10 @@ const About = () => {
           </div>
 
           <div>
-            <label htmlFor="title" className="block text-sm font-medium text-gray-700">
+            <label
+              htmlFor="title"
+              className="block text-sm font-medium text-gray-700"
+            >
               Professional Title
             </label>
             <input
@@ -187,7 +223,10 @@ const About = () => {
           </div>
 
           <div>
-            <label htmlFor="description1" className="block text-sm font-medium text-gray-700">
+            <label
+              htmlFor="description1"
+              className="block text-sm font-medium text-gray-700"
+            >
               Description (First Paragraph)
             </label>
             <textarea
@@ -201,7 +240,10 @@ const About = () => {
           </div>
 
           <div>
-            <label htmlFor="description2" className="block text-sm font-medium text-gray-700">
+            <label
+              htmlFor="description2"
+              className="block text-sm font-medium text-gray-700"
+            >
               Description (Second Paragraph)
             </label>
             <textarea
@@ -216,7 +258,10 @@ const About = () => {
 
           <div className="grid grid-cols-1 gap-6 sm:grid-cols-2">
             <div>
-              <label htmlFor="signatureName" className="block text-sm font-medium text-gray-700">
+              <label
+                htmlFor="signatureName"
+                className="block text-sm font-medium text-gray-700"
+              >
                 Signature Name
               </label>
               <input
@@ -230,7 +275,10 @@ const About = () => {
             </div>
 
             <div>
-              <label htmlFor="signatureTitle" className="block text-sm font-medium text-gray-700">
+              <label
+                htmlFor="signatureTitle"
+                className="block text-sm font-medium text-gray-700"
+              >
                 Signature Title
               </label>
               <input
@@ -244,34 +292,40 @@ const About = () => {
             </div>
 
             <div>
-              <label htmlFor="signature" className="block text-sm font-medium text-gray-700">
-                Signature Image URL
+              <label className="block text-sm font-medium text-gray-700 mb-2">
+                Signature Image
               </label>
-              <input
-                type="url"
-                name="signature"
-                id="signature"
-                value={aboutData.signature}
-                onChange={handleChange}
-                className="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:ring-primary-500 focus:border-primary-500 sm:text-sm"
-                placeholder="images/about/signature.png"
+              <FileUpload
+                onFileUpload={handleFileUpload('signature')}
+                currentImage={aboutData.signature}
+                fieldName="signature"
+                placeholder="Upload signature image"
               />
             </div>
 
             <div>
-              <label htmlFor="image" className="block text-sm font-medium text-gray-700">
-                Profile Image URL
+              <label className="block text-sm font-medium text-gray-700 mb-2">
+                Profile Image
               </label>
-              <input
-                type="url"
-                name="image"
-                id="image"
-                value={aboutData.image}
-                onChange={handleChange}
-                className="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:ring-primary-500 focus:border-primary-500 sm:text-sm"
-                placeholder="images/about/about-img.jpg"
+              <FileUpload
+                onFileUpload={handleFileUpload('image')}
+                currentImage={aboutData.image}
+                fieldName="image"
+                placeholder="Upload profile image"
               />
             </div>
+          </div>
+
+          <div>
+            <label className="block text-sm font-medium text-gray-700 mb-2">
+              Banner Image
+            </label>
+            <FileUpload
+              onFileUpload={handleFileUpload('BannerImage')}
+              currentImage={aboutData.BannerImage}
+              fieldName="BannerImage"
+              placeholder="Upload banner image"
+            />
           </div>
 
           <div className="flex justify-end">
@@ -286,14 +340,14 @@ const About = () => {
                   Saving...
                 </div>
               ) : (
-                'Save Changes'
+                "Save Changes"
               )}
             </button>
           </div>
         </form>
       </div>
     </div>
-  )
+  );
 }
 
 export default About

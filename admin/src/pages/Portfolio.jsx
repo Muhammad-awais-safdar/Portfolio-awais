@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react'
 import { portfolioAPI } from '../services/api'
 import toast from 'react-hot-toast'
 import { PlusIcon, PencilIcon, TrashIcon, EyeIcon } from '@heroicons/react/24/outline'
+import FileUpload from '../components/FileUpload'
 
 const Portfolio = () => {
   const [portfolioList, setPortfolioList] = useState([])
@@ -127,6 +128,20 @@ const Portfolio = () => {
       ...prev,
       [name]: value
     }))
+  }
+
+  const handleFileUpload = (fieldName) => (fileData) => {
+    if (fileData) {
+      setFormData(prev => ({
+        ...prev,
+        [fieldName]: fileData.url
+      }))
+    } else {
+      setFormData(prev => ({
+        ...prev,
+        [fieldName]: ''
+      }))
+    }
   }
 
   if (loading) {
@@ -315,30 +330,26 @@ const Portfolio = () => {
 
                       <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 mt-4">
                         <div>
-                          <label htmlFor="image" className="block text-sm font-medium text-gray-700">
-                            Thumbnail Image URL
+                          <label className="block text-sm font-medium text-gray-700 mb-2">
+                            Thumbnail Image
                           </label>
-                          <input
-                            type="url"
-                            name="image"
-                            id="image"
-                            value={formData.image}
-                            onChange={handleChange}
-                            className="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:ring-primary-500 focus:border-primary-500 sm:text-sm"
+                          <FileUpload
+                            onFileUpload={handleFileUpload('image')}
+                            currentImage={formData.image}
+                            fieldName="image"
+                            placeholder="Upload thumbnail image"
                           />
                         </div>
 
                         <div>
-                          <label htmlFor="largeImage" className="block text-sm font-medium text-gray-700">
-                            Large Image URL
+                          <label className="block text-sm font-medium text-gray-700 mb-2">
+                            Large Image
                           </label>
-                          <input
-                            type="url"
-                            name="largeImage"
-                            id="largeImage"
-                            value={formData.largeImage}
-                            onChange={handleChange}
-                            className="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:ring-primary-500 focus:border-primary-500 sm:text-sm"
+                          <FileUpload
+                            onFileUpload={handleFileUpload('largeImage')}
+                            currentImage={formData.largeImage}
+                            fieldName="largeImage"
+                            placeholder="Upload large image"
                           />
                         </div>
                       </div>

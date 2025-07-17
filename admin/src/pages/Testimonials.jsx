@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react'
 import { testimonialsAPI } from '../services/api'
 import toast from 'react-hot-toast'
 import { PlusIcon, PencilIcon, TrashIcon, StarIcon } from '@heroicons/react/24/outline'
+import FileUpload from '../components/FileUpload'
 
 const Testimonials = () => {
   const [testimonialsList, setTestimonialsList] = useState([])
@@ -109,6 +110,20 @@ const Testimonials = () => {
       ...prev,
       [name]: value
     }))
+  }
+
+  const handleFileUpload = (fieldName) => (fileData) => {
+    if (fileData) {
+      setFormData(prev => ({
+        ...prev,
+        [fieldName]: fileData.url
+      }))
+    } else {
+      setFormData(prev => ({
+        ...prev,
+        [fieldName]: ''
+      }))
+    }
   }
 
   const renderStars = (rating) => {
@@ -251,17 +266,14 @@ const Testimonials = () => {
                         </div>
 
                         <div>
-                          <label htmlFor="image" className="block text-sm font-medium text-gray-700">
-                            Image URL
+                          <label className="block text-sm font-medium text-gray-700 mb-2">
+                            Profile Image
                           </label>
-                          <input
-                            type="url"
-                            name="image"
-                            id="image"
-                            value={formData.image}
-                            onChange={handleChange}
-                            className="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:ring-primary-500 focus:border-primary-500 sm:text-sm"
-                            placeholder="https://example.com/image.jpg"
+                          <FileUpload
+                            onFileUpload={handleFileUpload('image')}
+                            currentImage={formData.image}
+                            fieldName="image"
+                            placeholder="Upload profile image"
                           />
                         </div>
                       </div>

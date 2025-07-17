@@ -1,16 +1,48 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import Tilt from "react-parallax-tilt";
 import { motion } from "framer-motion";
-import introFeatures from "../data/introFeatures.json"; // adjust path if needed
+import api from "../services/api";
 
 export default function IntroFeatureArea() {
+  const [introFeatures, setIntroFeatures] = useState([]);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    fetchIntroFeatures();
+  }, []);
+
+  const fetchIntroFeatures = async () => {
+    try {
+      const data = await api.getIntroFeatures();
+      setIntroFeatures(data || []);
+    } catch (error) {
+      console.error('Error fetching intro features:', error);
+      setIntroFeatures([]);
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  if (loading) {
+    return (
+      <div className="intro-feature-area section-bg over-hidden position-relative">
+        <div className="container">
+          <div className="text-center">
+            <div className="spinner-border text-primary" role="status">
+              <span className="sr-only">Loading...</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    );
+  }
   return (
     <div className="intro-feature-area section-bg over-hidden position-relative">
       <div className="container">
         <div className="row single-intro-feature-wrapper justify-content-center pt-170 pb-140">
           {introFeatures.map((item, idx) => (
             <div
-              key={idx}
+              key={item._id || idx}
               className="col-xl-3 col-lg-3 col-md-6 col-sm-9 col-11"
             >
               <Tilt tiltMaxAngleX={10} tiltMaxAngleY={10} glareEnable={false}>

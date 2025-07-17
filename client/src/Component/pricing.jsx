@@ -1,7 +1,39 @@
-import React from "react";
-import pricingData from "../data/pricingData.json";
+import React, { useState, useEffect } from "react";
+import api from "../services/api";
 
 export default function Pricing() {
+  const [pricing, setPricing] = useState([]);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    fetchPricing();
+  }, []);
+
+  const fetchPricing = async () => {
+    try {
+      const data = await api.getPricing();
+      setPricing(data || []);
+    } catch (error) {
+      console.error('Error fetching pricing:', error);
+      setPricing([]);
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  if (loading) {
+    return (
+      <div className="pricing-area over-hidden pt-160 pb-140">
+        <div className="container">
+          <div className="text-center">
+            <div className="spinner-border text-primary" role="status">
+              <span className="sr-only">Loading...</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    );
+  }
   return (
     <div className="pricing-area over-hidden pt-160 pb-140">
       <div className="container">
@@ -17,9 +49,9 @@ export default function Pricing() {
         </div>
 
         <div className="row price-wrapper justify-content-center mt-80">
-          {pricingData.map((plan, index) => (
+          {pricing.map((plan, index) => (
             <div
-              key={index}
+              key={plan._id || index}
               className="col-xl-4 col-lg-4 col-md-6 col-sm-8 col-12"
               data-aos="fade-up"
               data-aos-anchor-placement="top-bottom"

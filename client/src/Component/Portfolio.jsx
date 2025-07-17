@@ -10,22 +10,20 @@ export default function Portfolio() {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    const fetchPortfolioData = async () => {
-      try {
-        const data = await api.getPortfolio();
-        setPortfolioData(data);
-      } catch (error) {
-        console.error('Error fetching portfolio data:', error);
-        // Fallback to local JSON if API fails
-        const fallbackData = await import('../data/portfolio.json');
-        setPortfolioData(fallbackData.default);
-      } finally {
-        setLoading(false);
-      }
-    };
-
     fetchPortfolioData();
   }, []);
+
+  const fetchPortfolioData = async () => {
+    try {
+      const data = await api.getPortfolio();
+      setPortfolioData(data || []);
+    } catch (error) {
+      console.error('Error fetching portfolio data:', error);
+      setPortfolioData([]);
+    } finally {
+      setLoading(false);
+    }
+  };
 
   if (loading) {
     return <div className="loading">Loading...</div>;

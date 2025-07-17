@@ -1,8 +1,34 @@
 import React from "react";
 import { TypeAnimation } from "react-type-animation"; // modern replacement
 import { motion } from "framer-motion";
+import { useState } from "react";
+import { useEffect } from "react";
+import api from "../services/api";
+
 
 export default function HeroSection() {
+  const [aboutData, setAboutData] = useState({});
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    fetchAboutData();
+  }, []);
+
+  const fetchAboutData = async () => {
+    try {
+      const data = await api.getAbout();
+      setAboutData(data || {});
+    } catch (error) {
+      console.error('Error fetching about data:', error);
+      setAboutData({});
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  if (loading) {
+    return <div className="loading">Loading...</div>;
+  }
   return (
     <div id="home" className="slider-area slider-bg-color over-hidden">
       <div
@@ -55,7 +81,7 @@ export default function HeroSection() {
                     <span className="sub-heading d-block text-uppercase theme-color mb-0">
                       Hello I’m
                     </span>
-                    Muhammad Awais
+                    {aboutData.name}
                   </h1>
                   <h2 className="text-capitalize white-text mb-40">
                     A Passionate{" "}
@@ -89,7 +115,7 @@ export default function HeroSection() {
             {/* Right image */}
             <div className="col-xl-7 col-lg-6 col-md-7 col-sm-10 col-12 d-flex justify-content-center align-items-end h-100">
               <div className="slider-img pl-120 position-relative z-index1">
-                <img src="images/slider/person.png" alt="hero" />
+                <img src={aboutData.BannerImage} alt="hero" />
               </div>
             </div>
           </div>

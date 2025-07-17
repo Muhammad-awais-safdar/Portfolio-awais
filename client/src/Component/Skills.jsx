@@ -76,22 +76,20 @@ export default function Skills() {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    const fetchSkillsData = async () => {
-      try {
-        const data = await api.getSkills();
-        setSkillsData(data);
-      } catch (error) {
-        console.error('Error fetching skills data:', error);
-        // Fallback to local JSON if API fails
-        const fallbackData = await import('../data/skills.json');
-        setSkillsData(fallbackData.default);
-      } finally {
-        setLoading(false);
-      }
-    };
-
     fetchSkillsData();
   }, []);
+
+  const fetchSkillsData = async () => {
+    try {
+      const data = await api.getSkills();
+      setSkillsData(data || []);
+    } catch (error) {
+      console.error('Error fetching skills data:', error);
+      setSkillsData([]);
+    } finally {
+      setLoading(false);
+    }
+  };
 
   if (loading) {
     return <div className="loading">Loading...</div>;

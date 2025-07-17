@@ -1,11 +1,30 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import Slider from "react-slick";
-import brandsData from "../data/brands.json";
+import api from "../services/api";
 
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
 export default function Brand() {
+  const [brands, setBrands] = useState([]);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    fetchBrands();
+  }, []);
+
+  const fetchBrands = async () => {
+    try {
+      const data = await api.getBrands();
+      setBrands(data || []);
+    } catch (error) {
+      console.error('Error fetching brands:', error);
+      setBrands([]);
+    } finally {
+      setLoading(false);
+    }
+  };
+
   const settings = {
     dots: false,
     arrows: false,
@@ -22,6 +41,20 @@ export default function Brand() {
     ],
   };
 
+  if (loading) {
+    return (
+      <div className="brand-area brand-height over-hidden">
+        <div className="container">
+          <div className="text-center">
+            <div className="spinner-border text-primary" role="status">
+              <span className="sr-only">Loading...</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    );
+  }
+
   return (
     <div className="brand-area brand-height over-hidden">
       <div className="container">
@@ -29,9 +62,9 @@ export default function Brand() {
           <div className="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
             <ul className="brand-active mt-70 mb-90">
               <Slider {...settings}>
-                {brandsData.map((brand) => (
+                {brands.map((brand) => (
                   <li
-                    key={brand.id}
+                    key={brand._id || brand.id}
                     className="d-inline-block position-relative over-hidden"
                   >
                     <a

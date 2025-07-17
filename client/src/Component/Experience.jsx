@@ -1,9 +1,41 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import { Parallax } from "react-parallax";
-import experienceData from "../data/experience.json";
+import api from "../services/api";
 
 export default function Experience() {
+  const [experience, setExperience] = useState([]);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    fetchExperience();
+  }, []);
+
+  const fetchExperience = async () => {
+    try {
+      const data = await api.getExperience();
+      setExperience(data || []);
+    } catch (error) {
+      console.error('Error fetching experience:', error);
+      setExperience([]);
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  if (loading) {
+    return (
+      <div className="experience-area over-hidden pb-165 position-relative">
+        <div className="container">
+          <div className="text-center">
+            <div className="spinner-border text-primary" role="status">
+              <span className="sr-only">Loading...</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    );
+  }
   return (
     <div className="experience-area over-hidden pb-165 position-relative">
       {/* Parallax background on left */}
@@ -52,9 +84,9 @@ export default function Experience() {
 
               <div className="experience-wrapper pt-25">
                 <ul className="experience-content">
-                  {experienceData.map((item, index) => (
+                  {experience.map((item, index) => (
                     <motion.li
-                      key={index}
+                      key={item._id || index}
                       className="mb-32 d-flex align-items-start rotate-hover"
                       initial={{ opacity: 0, y: 30 }}
                       whileInView={{ opacity: 1, y: 0 }}

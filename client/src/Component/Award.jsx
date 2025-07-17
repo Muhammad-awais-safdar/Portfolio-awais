@@ -1,7 +1,39 @@
-import React from "react";
-import awardsData from "../data/awardsData.json"; // adjust path if needed
+import React, { useState, useEffect } from "react";
+import api from "../services/api";
 
 export default function Award() {
+  const [awards, setAwards] = useState([]);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    fetchAwards();
+  }, []);
+
+  const fetchAwards = async () => {
+    try {
+      const data = await api.getAwards();
+      setAwards(data || []);
+    } catch (error) {
+      console.error('Error fetching awards:', error);
+      setAwards([]);
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  if (loading) {
+    return (
+      <div className="award-area over-hidden position-relative z-index11 pt-160 pb-170">
+        <div className="container">
+          <div className="text-center">
+            <div className="spinner-border text-primary" role="status">
+              <span className="sr-only">Loading...</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    );
+  }
   return (
     <div className="award-area over-hidden position-relative z-index11 pt-160 pb-170">
       <div className="container">
@@ -17,11 +49,11 @@ export default function Award() {
         </div>
 
         <div className="award-wrapper mt-70">
-          {awardsData.map((award, index) => (
+          {awards.map((award, index) => (
             <div
-              key={award.id}
+              key={award._id || award.id || index}
               className={`row align-items-start theme-border-top ${
-                index === awardsData.length - 1 ? "theme-border-bottom" : ""
+                index === awards.length - 1 ? "theme-border-bottom" : ""
               } award-margin pt-40 pb-35`}
             >
               <div className="col-xl-2 col-lg-2 col-md-2 col-sm-11 col-12">

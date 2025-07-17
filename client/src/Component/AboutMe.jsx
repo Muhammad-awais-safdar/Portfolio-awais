@@ -8,22 +8,20 @@ export default function AboutMe() {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    const fetchAboutData = async () => {
-      try {
-        const data = await api.getAbout();
-        setAboutData(data);
-      } catch (error) {
-        console.error('Error fetching about data:', error);
-        // Fallback to local JSON if API fails
-        const fallbackData = await import('../data/about.json');
-        setAboutData(fallbackData.default);
-      } finally {
-        setLoading(false);
-      }
-    };
-
     fetchAboutData();
   }, []);
+
+  const fetchAboutData = async () => {
+    try {
+      const data = await api.getAbout();
+      setAboutData(data || {});
+    } catch (error) {
+      console.error('Error fetching about data:', error);
+      setAboutData({});
+    } finally {
+      setLoading(false);
+    }
+  };
 
   if (loading) {
     return <div className="loading">Loading...</div>;
@@ -94,7 +92,7 @@ export default function AboutMe() {
                   <div className="row">
                     <div className="col-xl-5 col-lg-12 col-md-6 col-sm-12 col-12">
                       <ul className="about-info">
-                        <li className="d-inline-block pr-45">
+                        <li className="d-inline-block pr-22">
                           <p className="jostMedium-font-family mb-6">Name</p>
                           <p className="jostMedium-font-family mb-6">Age</p>
                           <p className="jostMedium-font-family mb-6">

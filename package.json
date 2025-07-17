@@ -1,0 +1,15 @@
+{
+  "name": "portfolio",
+  "private": true,
+  "workspaces": [
+    "admin",
+    "client",
+    "server"
+  ],
+  "devDependencies": {
+    "concurrently": "^8.0.0"
+  },
+  "scripts": {
+    "dev": "concurrently -n \"admin,client,subdomain,dashboard,server\" -c \"cyan,green,yellow,magenta,blue\" \"npm --workspace admin run dev\" \"npm --workspace client run dev\" \"npm --workspace client-subdomain run dev\" \"npm --workspace dashboard run dev\" \"npm --workspace server run dev\""
+  }
+}

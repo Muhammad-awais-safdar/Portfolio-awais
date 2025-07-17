@@ -1,11 +1,30 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import Slider from "react-slick";
-import testimonialsData from "../data/testimonials.json";
+import api from "../services/api";
 
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
 export default function Testimonials() {
+  const [testimonials, setTestimonials] = useState([]);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    fetchTestimonials();
+  }, []);
+
+  const fetchTestimonials = async () => {
+    try {
+      const data = await api.getTestimonials();
+      setTestimonials(data || []);
+    } catch (error) {
+      console.error('Error fetching testimonials:', error);
+      setTestimonials([]);
+    } finally {
+      setLoading(false);
+    }
+  };
+
   const settings = {
     dots: true,
     arrows: false,
@@ -22,6 +41,20 @@ export default function Testimonials() {
       },
     ],
   };
+
+  if (loading) {
+    return (
+      <div className="testimonial-area position-relative over-hidden">
+        <div className="container">
+          <div className="text-center">
+            <div className="spinner-border text-primary" role="status">
+              <span className="sr-only">Loading...</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    );
+  }
 
   return (
     <div className="testimonial-area position-relative over-hidden">
@@ -47,8 +80,8 @@ export default function Testimonials() {
                 </div>
                 <div className="testimonial-active pl-80 pr-90">
                   <Slider {...settings}>
-                    {testimonialsData.map((testimonial) => (
-                      <div className="testimonial-content" key={testimonial.id}>
+                    {testimonials.map((testimonial) => (
+                      <div className="testimonial-content" key={testimonial._id || testimonial.id}>
                         <blockquote className="testimonial-text position-relative mb-0 font-italic openS-font-family text-color">
                           {testimonial.text}
                         </blockquote>
